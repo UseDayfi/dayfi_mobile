@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void showDebitCardValidSnackbar(BuildContext context) {
   final snackBar = SnackBar(
+    elevation: 0,
     content: const Text(
       '✅ Debit Card Valid',
       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

@@ -16,14 +16,6 @@ class _SuccessViewState extends State<SuccessView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfff7f7f7),
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 49, 17, 34).withOpacity(.2),
-        elevation: 0,
-        leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () => Navigator.pop(context)),
-        centerTitle: false,
-      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,

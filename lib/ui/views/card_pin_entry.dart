@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dayfi/ui/common/transaction.dart';
 import 'package:dayfi/ui/views/success_view.dart';
 import 'package:flutter/material.dart';
@@ -126,9 +128,14 @@ class _CardPinEntryState extends State<CardPinEntry> {
       toCurrency: 'NGN',
     );
 
-    double currentBalance = widget.transactionService.getNairaBalance();
-    await widget.transactionService
-        .updateNairaBalance(currentBalance + widget.amount);
+    double beforeCurrentBalance = widget.transactionService.getNairaBalance();
+    log(beforeCurrentBalance.toString());
+
+    // await widget.transactionService
+    //     .updateNairaBalance(widget.amount);
+
+    double afterCurrentBalance = widget.transactionService.getNairaBalance();
+    log(afterCurrentBalance.toString());
 
     await Future.delayed(const Duration(milliseconds: 2000));
 
@@ -342,8 +349,7 @@ class Loader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          Theme.of(context).scaffoldBackgroundColor.withOpacity(0.5),
+    backgroundColor: Color(0xfff7f7f7),
       body: Center(
         child: Container(
           width: 50.0,
@@ -351,7 +357,9 @@ class Loader extends StatelessWidget {
           alignment: Alignment.center,
           child: const LoadingIndicator(
               indicatorType: Indicator.ballRotateChase,
-              colors: [Color(0xff420084)],
+              colors: [
+                Color(0xffff0082),
+              ],
               strokeWidth: 5.0,
               pathBackgroundColor: Colors.black),
         ),

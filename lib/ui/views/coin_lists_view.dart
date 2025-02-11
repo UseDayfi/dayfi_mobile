@@ -311,7 +311,7 @@ class _CoinListScreenState extends State<CoinListScreen> {
                                     radius: 15,
                                     backgroundColor:
                                         Color.fromARGB(255, 49, 17, 34)
-                                            .withOpacity(.2),
+                                            .withOpacity(0),
                                     child: Image.network(coin['icon']),
                                   ),
                                   subtitle: Text(coin['abbv']),
@@ -440,6 +440,7 @@ class _CoinListScreenState extends State<CoinListScreen> {
           backgroundColor:
               selectedFilter == filter ? Colors.blue : Colors.grey.shade300,
           foregroundColor: Colors.black,
+          // side: 
         ),
         onPressed: () => sortCoins(filter),
         child: Text(title),
